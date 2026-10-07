@@ -614,3 +614,38 @@ footer.site-footer {
   flex-wrap: wrap;
   gap: 12px;
 }
+
+/* ===== Ajustes de la migración a React ===== */
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.section-spaced { margin-top: 44px; }
+.hero-banner-compact { padding: 28px 36px; }
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 48px;
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px dashed var(--border-medium);
+}
+.empty-state p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.contact-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+.contact-text { color: var(--text-muted); font-size: 0.92rem; }
+.contact-text-spaced { margin-bottom: 24px; }
+.info-label { display: block; font-size: 0.9rem; color: var(--text-main); }
+.info-value { color: var(--text-muted); font-size: 0.9rem; }
+.btn-full { width: 100%; }
+.badge-spaced { margin-bottom: 12px; }
+.card-meta-muted { color: var(--text-muted); }
