@@ -7,7 +7,9 @@ export function Layout() {
     <div className="app-container">
       <Navbar />
       <main className="content">
-        <Outlet />
+        <div className="container">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </div>
