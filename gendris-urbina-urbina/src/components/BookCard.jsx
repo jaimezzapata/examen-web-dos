@@ -1,13 +1,45 @@
-export function BookCard({ book }) {
+import Icono from "./Icono";
+
+export default function BookCard({
+  titulo,
+  autor,
+  categoria,
+  icono,
+  anio,
+  paginas,
+  calificacion,
+  editorial,
+  isbn,
+  resumen,
+}) {
   return (
-    <div className="book-card">
-      <h3>{book.title}</h3>
-      <p><strong>Autor:</strong> {book.author}</p>
-      <p><strong>Categoría:</strong> {book.category}</p>
-      <p><strong>Año:</strong> {book.year}</p>
-      <span className={book.available ? "badge available" : "badge unavailable"}>
-        {book.available ? "Disponible" : "No disponible"}
-      </span>
-    </div>
+    <article className="book-card">
+      <div className="book-card__header">
+        <div className="book-card__icon">
+          <Icono nombre={icono || "book-open"} className="icon-sm" />
+        </div>
+        <div>
+          <span className="book-card__category">{categoria}</span>
+          <h3>{titulo}</h3>
+        </div>
+      </div>
+
+      <p className="book-card__meta">
+        <strong>Autor:</strong> {autor}
+      </p>
+      <p className="book-card__meta">
+        <strong>Editorial:</strong> {editorial}
+      </p>
+      <p className="book-card__meta">
+        <strong>Año:</strong> {anio} · <strong>Páginas:</strong> {paginas}
+      </p>
+      <p className="book-card__meta">
+        <strong>Calificación:</strong> {calificacion} / 5
+      </p>
+      <p className="book-card__meta">
+        <strong>ISBN:</strong> {isbn}
+      </p>
+      <p className="book-card__summary">{resumen}</p>
+    </article>
   );
 }

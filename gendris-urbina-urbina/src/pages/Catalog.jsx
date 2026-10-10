@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { libros } from "../data/libros";
+import { booksData as libros } from "../data/booksData";
 import HeroBanner from "../components/HeroBanner";
 import BookCard from "../components/BookCard";
 import Icono from "../components/Icono";

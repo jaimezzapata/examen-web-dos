@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { libros } from "../data/libros";
+import { booksData as libros } from "../data/booksData";
 import HeroBanner from "../components/HeroBanner";
 import StatCard from "../components/StatCard";
 import BookCard from "../components/BookCard";
