@@ -1,0 +1,374 @@
+
+/* Estructura general */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Encabezado y navegación */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgb(255 255 255 / 95%);
+  border-bottom: 1px solid #e2e8f0;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  display: flex;
+  width: min(1100px, 90%);
+  min-height: 76px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  color: #ffffff;
+  background: #4f46e5;
+  border-radius: 10px;
+  font-size: 1.4rem;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-nav a {
+  padding: 0.65rem 0.9rem;
+  color: #475569;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #4338ca;
+  background: #eef2ff;
+}
+
+/* Portada y encabezados de sección */
+.hero {
+  padding: clamp(2rem, 6vw, 4.5rem);
+  background: linear-gradient(135deg, #eef2ff, #f8fafc 75%);
+  border: 1px solid #e0e7ff;
+  border-radius: 24px;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0.5rem 0 1rem;
+  color: #0f172a;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.hero > p:last-child,
+.section-heading > p:last-child {
+  max-width: 700px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #4f46e5;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.featured-section,
+.catalog-section,
+.contact-section {
+  margin-top: 3rem;
+}
+
+.section-heading {
+  margin-bottom: 1.75rem;
+}
+
+.section-heading h1,
+.section-heading h2 {
+  margin: 0.5rem 0;
+  color: #0f172a;
+  font-size: clamp(1.7rem, 4vw, 2.35rem);
+  letter-spacing: -0.03em;
+}
+
+/* Métricas */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.metric-card {
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.metric-card p {
+  margin: 0 0 0.65rem;
+  color: #64748b;
+  font-size: 0.84rem;
+}
+
+.metric-card strong {
+  color: #4f46e5;
+  font-size: 1.8rem;
+}
+
+/* Catálogo y filtros */
+.catalog-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 0.7fr) auto;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.catalog-filters label,
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #334155;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.catalog-filters input,
+.catalog-filters select,
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 0.8rem 0.9rem;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  outline: none;
+}
+
+.catalog-filters input:focus,
+.catalog-filters select:focus,
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 14%);
+}
+
+.catalog-filters button,
+.contact-form button,
+.empty-results button {
+  padding: 0.8rem 1.1rem;
+  color: #ffffff;
+  background: #4f46e5;
+  border: 1px solid #4f46e5;
+  border-radius: 9px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.catalog-filters button:hover,
+.contact-form button:hover,
+.empty-results button:hover {
+  background: #4338ca;
+}
+
+.results-count {
+  margin: 1rem 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.empty-results {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+}
+
+.empty-results h2 {
+  margin-top: 0;
+}
+
+.empty-results p {
+  margin-bottom: 1.25rem;
+  color: #64748b;
+}
+
+/* Contacto */
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.contact-information {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-info-card,
+.contact-form-card {
+  padding: 1.4rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.contact-info-card h2,
+.contact-form-card h2 {
+  margin: 0 0 0.75rem;
+  color: #0f172a;
+  font-size: 1.05rem;
+}
+
+.contact-info-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* Pie de página */
+.site-footer {
+  padding: 1.75rem 5%;
+  color: #64748b;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 800px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .catalog-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .catalog-filters button {
+    grid-column: 1 / -1;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .main-nav {
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .main-nav a {
+    padding: 0.55rem 0.65rem;
+  }
+
+  .metrics-grid,
+  .catalog-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-filters button {
+    grid-column: auto;
+  }
+
+  main {
+    padding-top: 1.5rem;
+  }
+
+  .hero {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
